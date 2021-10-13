@@ -1,0 +1,30 @@
+﻿@page
+@model RazorCurrencyConverter.Pages.CuurencyConverterModel
+@{
+}
+
+<div>
+    <header class="text-center">
+        <h1 class="display-4">Currency Converter GBP to Eur</h1>
+        <h2>By Kayley Syrett</h2>
+    </header>
+    <br /><br />
+    <form method="post" class="mx-auto" style="width:200px">
+        <p class="col-sm-2">
+            <label for="sourceCurrency">GBP (£)</label>
+            <input type="number" required placeholder="0.00" asp-for="@Model.InputGBP" />
+        </p>
+        <p class="col-sm-2">
+            <label for="destCurrency">EUR</label>
+            <input type="number" asp-for="@Model.OutputEUR" value="@Model.OutputEUR.ToString("0.00")" readonly/>
+        </p>
+        <p class="col-sm-2">
+            <button type="submit" class="btn btn-primary">
+                Convert
+            </button>
+        </p>
+        <p class="col-12">
+            @ViewData["Message"]
+        </p>
+    </form>
+</div>
